@@ -34,7 +34,7 @@ form .form_input {
   gap: 4px;
   margin-bottom: 12px;
   justify-content: flex-start;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .form_input label {
