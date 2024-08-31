@@ -1,7 +1,6 @@
 import { useRef, useEffect } from "react";
-import { useThree, useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import wall from "../../data/images/light_fine_wood.jpg";
+import { useThree } from "@react-three/fiber";
+
 // import ground from "../../data/images/hardwood.png";
 import hardwood2_diffuse from "../../data/images/hardwood2_diffuse.jpg";
 import hardwood2_bump from "../../data/images/hardwood2_bump.jpg";
@@ -12,8 +11,6 @@ import brick_bump from "../../data/images/brick_bump.jpg";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 
-const PLAN_WIDTH = 150;
-const PLAN_HEIGHT = 150;
 const WALL_WIDTH = 0.1;
 const WALL_HEIGHT = 3;
 const SCALE_FACTOR = 0.1;
@@ -21,7 +18,6 @@ const SCALE_FACTOR = 0.1;
 export default function ThreeD(props) {
   const { scene } = useThree();
   const controls = useRef();
-  const planeRef = useRef();
 
   useEffect(() => {
     let camera = new THREE.PerspectiveCamera(
@@ -268,7 +264,7 @@ export default function ThreeD(props) {
 
       drawWall(p1, p2);
     }
-  }, []);
+  });
 
   return (
     <>

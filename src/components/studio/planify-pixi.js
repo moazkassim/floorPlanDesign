@@ -98,7 +98,7 @@ class PlanifyDraw extends Component {
     );
 
     const ch = this.ch;
-    const app = this.app;
+
     this.app.renderer.plugins.interaction.defaultCursorStyle = "inherit";
     this.app.stage.hitArea = this.app.screen;
     this.app.stage.interactive = true;
@@ -162,8 +162,6 @@ class PlanifyDraw extends Component {
 
     // Events Handlers
     // window.addEventListener("resize", this.handleWindowResize);
-
-    const camera = this.app.stage;
 
     // this.manager.on("pointermove", (e) => {
     //     const {x, y} = e.data.global;
@@ -272,6 +270,7 @@ class PlanifyDraw extends Component {
         yj = this.plan_points[j].y;
 
       var intersect =
+        // eslint-disable-next-line no-mixed-operators
         yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
       if (intersect) inside = !inside;
     }
@@ -429,9 +428,6 @@ class PlanifyDraw extends Component {
         this.lines.moveTo(this.selected_line[0].x, this.selected_line[0].y);
         this.lines.lineTo(this.selected_line[1].x, this.selected_line[1].y);
       }
-
-      let width = window.screen.width;
-      let height = window.screen.height;
 
       // console.log(width, height);
 
@@ -631,7 +627,7 @@ class PlanifyDraw extends Component {
       // this.app.stage.removeListener("mousedown", this.onMouseDown, false);
       // this.app.stage.removeListener("mouseup", this.onMouseUp, false);
     } else if (!this.done) {
-      if (this.plan_points.length == 1) return;
+      if (this.plan_points.length === 1) return;
       this.plan_points.pop();
       this.textContainer.removeChildAt(this.textContainer.children.length - 2);
       this.onMoveDraw(e);
@@ -986,7 +982,7 @@ class PlanifyDraw extends Component {
     if (this.last_point) {
       var vNow = this.last_point.clone();
     } else {
-      var vNow = this.getMousePos(true, true);
+      vNow = this.getMousePos(true, true);
     }
 
     this.app.stage.removeListener("mousemove", this.onMoveDraw, false);
@@ -1030,9 +1026,7 @@ class PlanifyDraw extends Component {
             this.drag_grid_start_pos = vNow.clone();
           }
           this.selected_polygon = [];
-          this.plan_points.map((l) => {
-            this.selected_polygon.push(l.sub(vNow));
-          });
+          this.plan_points.map((l) => this.selected_polygon.push(l.sub(vNow)));
 
           if (this.door_poly)
             this.selected_door_poly = [
@@ -1044,8 +1038,6 @@ class PlanifyDraw extends Component {
           this.drawShape();
           return;
         }
-
-        return;
       }
     } else if (this.plan_points.length > 0) {
       let new_text = getText("0.0");

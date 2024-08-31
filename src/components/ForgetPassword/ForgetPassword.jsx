@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import joi from "joi";
+
 import { useNavigate } from "react-router-dom";
 import "./forgetPassword.css";
 
@@ -9,7 +9,7 @@ export default function ForgetPassword() {
     email: "",
   });
   const [errorMsg, setErrorMsg] = useState("");
-  const [errorsList, setErrorsList] = useState([]);
+  const [errorsList] = useState([]);
   const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
 

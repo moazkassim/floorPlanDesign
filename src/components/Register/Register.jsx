@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import joi from "joi";
+
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import { Link } from "react-router-dom";
@@ -14,8 +14,8 @@ export default function Register() {
     password: "",
   });
   const [errorMsg, setErrorMsg] = useState("");
-  const [errorsList, setErrorsList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [errorsList] = useState([]);
+  const [ setLoading] = useState(false);
 
   let navigate = useNavigate();
 

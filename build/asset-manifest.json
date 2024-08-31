@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dc91cc7e.css",
+    "main.js": "/static/js/main.522eb424.js",
+    "static/media/brick_diffuse.png": "/static/media/brick_diffuse.6a71feccea9d170df4d1.png",
+    "static/media/hardwood2_diffuse.jpg": "/static/media/hardwood2_diffuse.4c1710129123f60ec2f3.jpg",
+    "static/media/brick_bump.jpg": "/static/media/brick_bump.8257ea063a89fe678f35.jpg",
+    "static/media/output.png": "/static/media/output.a7df106e1f1471e719e4.png",
+    "static/media/hardwood2_roughness.jpg": "/static/media/hardwood2_roughness.eaf5e893334b43cd487c.jpg",
+    "static/media/hardwood2_bump.jpg": "/static/media/hardwood2_bump.41a409043d35b8189e5f.jpg",
+    "static/media/light_fine_wood.jpg": "/static/media/light_fine_wood.9aee025bf02e66d6e0c5.jpg",
+    "index.html": "/index.html",
+    "main.dc91cc7e.css.map": "/static/css/main.dc91cc7e.css.map",
+    "main.522eb424.js.map": "/static/js/main.522eb424.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc91cc7e.css",
+    "static/js/main.522eb424.js"
+  ]
+}

@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import TopNav from "../../TopNav";
 import Footer from "../../Footer";
 import { useNavigate } from "react-router-dom";
-import output from "./output.png";
 
 export default function ViewPlanify(props) {
   const navigate = useNavigate();
@@ -18,7 +17,7 @@ export default function ViewPlanify(props) {
         <h1> THis is the 2D image for your floor plan</h1>
         <img
           style={{ width: "630px", height: "630px " }}
-          alt="image for"
+          alt=" for"
           src={img}
         />
         <button
